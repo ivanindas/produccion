@@ -97,7 +97,7 @@ function filters_images() {
 
 
 
-/*
+/* // Función que redirecciona al checkout cuando se añade algo al carrito.
 add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
 
 function redirect_to_checkout() {
@@ -368,9 +368,6 @@ function wc_ga_ee_search_impression_tracking($post) {
 }
 
 
-
-
-
 //Tracking del checkout
 add_action( 'woocommerce_after_checkout_form', 'track_checkout', 30 );
 function track_checkout(){
@@ -509,18 +506,6 @@ function track_add_cart(){
 
 
 
-
-// register add to cart action
-/*
-function dac_add_cart_button () {
-    add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_add_to_cart', 10 );
-}
-add_action( 'after_setup_theme', 'dac_add_cart_button' );
-
-*/
-
-
-
 //control del texto del botón añadir al carrito.
 
 add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_cart_button_text' );    // 2.1 +
@@ -575,7 +560,7 @@ function skip_cart_page_redirection_to_checkout() {
 
 
 
-
+//Funcion que muestra en el checkout la imagen del producto que está pidiendo
 add_action('woocommerce_checkout_before_order_review', 'displays_cart_products_feature_image');
 function displays_cart_products_feature_image() {
     foreach ( WC()->cart->get_cart() as $cart_item ) {
