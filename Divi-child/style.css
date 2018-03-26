@@ -1,0 +1,251 @@
+/*
+ Theme Name:     Child Theme 
+ Theme URI:      http://www.indas.com
+ Description:    Child theme for Indasec
+ Author:         Iván Álvarez
+ Author URI:     http://www.indas.com
+ Template:       Divi
+ Version:        1.0.0
+*/
+
+.et-cart-info { display:none; } 
+/*
+*{font-weight: 300!important}
+*/
+H1,H2,H3,H4,H5,H6{font-weight: 500!important;}
+.et_color_scheme_pink a {
+	color: #e61396;
+}
+
+#top-menu li li a{width: 100%!important;}
+.nav li ul{width: 270px!important;}
+
+/*.filter45ml{font-size:0; background-image:url("http://www.indasec.com/new/wp-content/uploads/2017/09/45ml.png");}
+*/
+
+body,#et-top-navigation,#footer-info a {
+	font-weight: normal;
+}
+
+.woocommerce-error{background: #ff0000!important;}
+
+
+.et_pb_widget select {
+    width: auto;
+    height:39px;
+}
+
+.widget_categories{
+	margin-bottom:0px !important;
+}
+
+.widget_categories h4{
+	display:none;
+}
+
+.et_pb_search.et_pb_text_align_left .et_pb_searchsubmit, .et_pb_search.et_pb_text_align_center .et_pb_searchsubmit{
+	background:#e61396;
+	color:#ffffff;
+}
+
+.widget_search{
+	margin-bottom:0px !important;
+}
+
+#main-content .container {
+    padding-top:20px;
+}
+
+.et_pb_blog_grid .et_pb_post {
+    border: none;
+    min-height: 450px;
+}
+
+.ddm {
+    min-height: 500px !important;
+}
+
+.widgettitle{
+    text-align: center;
+    width: 100%;
+    color: #e61396;
+    text-transform: uppercase;
+    padding: 5px;
+    margin-bottom: 20px;	
+}
+
+.et_pb_widget_area_left {
+    padding-right: 0px;
+}
+
+#search-2{
+	margin-top:33px;
+}
+#recent-posts-widget-with-thumbnails-2
+{
+	margin-bottom:20px;
+	position: relative;
+    display: block;
+    z-index: 9999999999999999999999999;
+}
+
+.et_pb_slider ul.kiwi-article-bar{
+	display:none;
+}		
+
+
+
+
+/*Estilos pink*/
+.et_color_scheme_pink a {
+	color: #e61396;
+}
+
+
+.et_color_scheme_pink .et_pb_counter_amount,
+.et_color_scheme_pink .et_pb_featured_table .et_pb_pricing_heading,
+.et_color_scheme_pink #top-header {
+	background: #e61396 !important;
+}
+
+.et_color_scheme_pink.woocommerce a.button.alt,
+.et_color_scheme_pink.woocommerce-page a.button.alt,
+.et_color_scheme_pink.woocommerce button.button.alt,
+.et_color_scheme_pink.woocommerce-page button.button.alt,
+.et_color_scheme_pink.woocommerce input.button.alt,
+.et_color_scheme_pink.woocommerce-page input.button.alt,
+.et_color_scheme_pink.woocommerce #respond input#submit.alt,
+.et_color_scheme_pink.woocommerce-page #respond input#submit.alt,
+.et_color_scheme_pink.woocommerce #content input.button.alt,
+.et_color_scheme_pink.woocommerce-page #content input.button.alt,
+.et_color_scheme_pink.woocommerce a.button,
+.et_color_scheme_pink.woocommerce-page a.button,
+.et_color_scheme_pink.woocommerce button.button,
+.et_color_scheme_pink.woocommerce-page button.button,
+.et_color_scheme_pink.woocommerce input.button,
+.et_color_scheme_pink.woocommerce-page input.button,
+.et_color_scheme_pink.woocommerce #respond input#submit,
+.et_color_scheme_pink.woocommerce-page #respond input#submit,
+.et_color_scheme_pink.woocommerce #content input.button,
+.et_color_scheme_pink.woocommerce-page #content input.button,
+.et_color_scheme_pink .woocommerce-message,
+.et_color_scheme_pink .woocommerce-error,
+.et_color_scheme_pink .woocommerce-info {
+	background: #e61396 !important;
+    color: #fff  !important;
+    
+}
+
+.et_color_scheme_pink .woocommerce-message a,
+.et_color_scheme_pink .woocommerce-error a,
+.et_color_scheme_pink .woocommerce-info a {
+	text-decoration: underline !important;
+    color: #fff  !important;
+    
+}
+
+.et_color_scheme_pink #et_search_icon:hover,
+.et_color_scheme_pink .mobile_menu_bar:before,
+.et_color_scheme_pink .footer-widget h4,
+.et_color_scheme_pink .et_pb_sum,
+.et_color_scheme_pink .et_pb_pricing li a,
+.et_color_scheme_pink .et_pb_pricing_table_button,
+.et_color_scheme_pink .comment-reply-link,
+.et_color_scheme_pink .form-submit .et_pb_button,
+.et_color_scheme_pink .et_pb_bg_layout_light .et_pb_newsletter_button,
+.et_color_scheme_pink .et_pb_contact_submit,
+.et_color_scheme_pink .et_password_protected_form .et_submit_button,
+.et_color_scheme_pink .et_pb_bg_layout_light .et_pb_more_button,
+.et_color_scheme_pink .et_pb_bg_layout_light .et_pb_promo_button,
+.et_color_scheme_pink .et_overlay:before,
+.et_color_scheme_pink .entry-summary p.price ins,
+.et_color_scheme_pink.woocommerce div.product span.price,
+.et_color_scheme_pink.woocommerce-page div.product span.price,
+.et_color_scheme_pink.woocommerce #content div.product span.price,
+.et_color_scheme_pink.woocommerce-page #content div.product span.price,
+.et_color_scheme_pink.woocommerce div.product p.price,
+.et_color_scheme_pink.woocommerce-page div.product p.price,
+.et_color_scheme_pink.woocommerce #content div.product p.price,
+.et_color_scheme_pink.woocommerce-page #content div.product p.price,
+.et_color_scheme_pink #top-menu li.current-menu-ancestor > a,
+.et_color_scheme_pink #top-menu li.current-menu-item > a,
+.et_color_scheme_pink .bottom-nav li.current-menu-item > a {
+	color: #e61396;
+}
+
+.et_color_scheme_pink.woocommerce .star-rating span:before,
+.et_color_scheme_pink.woocommerce-page .star-rating span:before {
+	color: #e61396 !important;
+}
+
+.et_color_scheme_pink .et-search-form,
+.et_color_scheme_pink .nav li ul,
+.et_color_scheme_pink .et_mobile_menu,
+.et_color_scheme_pink .footer-widget li:before,
+.et_color_scheme_pink .et_pb_pricing li:before {
+	border-color: #e61396 !important;
+}
+
+/*quitar elementos en el checkout*/
+.page-id-34655 #et-top-navigation , .page-id-36682  #et-top-navigation, .page-id-34655 .wc-forward, .page-id-34655 .order-again{display: none !important;}
+.page-id-34655 .logo_container, .page-id-36682 .logo_container, .page-id-34655 .et_menu_container, .page-id-36682 .et_menu_container{height:  78px;}
+.page-id-34655 .logo_container, .page-id-36682 .logo_container{text-align: center;}
+
+
+/*estilos para para el checkout*/
+.checkout .col-1{
+    background-color: #eaeaea;
+    padding: 10px;
+}
+
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 18px;
+}
+
+
+
+
+@font-face {
+	font-family: "dashicons";
+	src: url("dashicons.eot");
+}
+
+@font-face {
+	font-family: "dashicons";
+	src: url(data:application/x-font-woff;charset=utf-8;base64,/* !! Large amount of data removed, see wp-includes/css/dashicons.css for complete data !! */) format("woff"),
+		url("dashicons.ttf") format("truetype"),
+		url("dashicons.svg#dashicons") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.star-rating{text-align: center;}
+.star-rating .star-full:before {
+    content: "\f155";
+}
+
+.star-rating .star-half:before {
+    content: "\f459";
+}
+
+.star-rating .star-empty:before {
+    content: "\f154";
+}
+
+.star-rating .star {
+    color: #0074A2;
+    display: inline-block;
+    font-family: dashicons;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    height: 20px;
+    line-height: 1;
+    text-align: center;
+    text-decoration: inherit;
+    vertical-align: top;
+    width: 20px;
+}
