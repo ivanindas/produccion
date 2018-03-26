@@ -53,9 +53,17 @@ if ( $product->is_in_stock() ) : ?>
 			 * @since 3.0.0.
 			 */
 			do_action( 'woocommerce_after_add_to_cart_quantity' );
-		
-		//modifico la condición para mostrar el botón aún cuando el precio del producto sea <0. Y cambio el get_price_html por get_price
-		if($product->get_price()<0){
+//***************		
+//***************		
+//****IVAN*******		
+//***************		
+//***************		
+//modifico la condición para mostrar el botón aún cuando el precio del producto sea 0. 
+		if($product->get_price_html()>=0){
+//***************		
+//***************		
+//***************		
+//***************
 		?>
 
 		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>

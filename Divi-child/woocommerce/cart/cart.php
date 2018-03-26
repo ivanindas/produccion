@@ -121,6 +121,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php
 				}
 			}
+			
 			?>
 
 			<?php do_action( 'woocommerce_cart_contents' ); ?>
@@ -136,7 +137,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 					<?php } ?>
 
 					<button type="submit" class="button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
-
+					
+					
 					<?php do_action( 'woocommerce_cart_actions' ); ?>
 
 					<?php wp_nonce_field( 'woocommerce-cart' ); ?>
@@ -146,9 +148,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
 	</table>
+	<?php if(WC()->cart->get_cart_item_quantities == 1) do_action( 'woocommerce_proceed_to_checkout' ); ?>
 	<?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
-<!--
+
 <div class="cart-collaterals">
 	<?php
 		/**
@@ -157,8 +160,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 		 * @hooked woocommerce_cross_sell_display
 		 * @hooked woocommerce_cart_totals - 10
 		 */
-		do_action( 'woocommerce_cart_collaterals' );
+		//do_action( 'woocommerce_cart_collaterals' );
 	?>
 </div>
--->
+
 <?php do_action( 'woocommerce_after_cart' ); ?>
