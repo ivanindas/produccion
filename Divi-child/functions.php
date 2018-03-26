@@ -5,10 +5,6 @@ function indasec_enqueue_tema_hijo_css() {
 add_action( 'wp_enqueue_scripts', 'indasec_enqueue_tema_hijo_css' );
 
 
-
-
-
-
 /**
 * Auto Complete all WooCommerce orders.
 * Add to theme functions.php file
@@ -126,10 +122,6 @@ add_action( 'woocommerce_register_form', 'wooc_add_field_to_registration' );
     return $errors;
 }
 add_action( 'woocommerce_process_registration_errors', 'wooc_validation_registration', 10, 4 );
-
-
-
-
 
 
 
@@ -666,8 +658,6 @@ function et_pb_postinfo_meta_acuam( $postinfo, $date_format, $comment_zero, $com
 		return $postinfo_meta;
 }
 endif;
-
-
 
 
 
