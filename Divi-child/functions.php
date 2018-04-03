@@ -7,7 +7,6 @@ add_action( 'wp_enqueue_scripts', 'indasec_enqueue_tema_hijo_css' );
 
 /**
 * Auto Complete all WooCommerce orders.
-* Add to theme functions.php file
 */
 
 add_action( 'woocommerce_thankyou', 'custom_woocommerce_auto_complete_order' );
@@ -493,14 +492,96 @@ function track_add_cart(){
     $(".single_add_to_cart_button").click(function() {
 		 gtag("event","Add_to_cart",{"event_category":"Ecommerce","event_label":"'.$product->get_sku().' - '.$product->get_name().'"});
 	});})(jQuery);</script>';
+	
+	
+
+	
+	
+	
+	//Eventos que trackean los botones de tiendas
+	echo '<script>(function($){
+		//AMAZON
+		
+		
+		
+		
+		
+		$(".wp-image-35833").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "Amazon",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			});
+			
+		//GLOBALPHARMA
+		$(".wp-image-35831").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "Globalpharma",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			});	
+			
+		//F+online
+		$(".wp-image-35835").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "F+online",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			});
+			
+		//Sensafarma
+		$(".wp-image-35836").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "Sensafarma",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			});
+		
+		
+		//Alcampo
+		$(".wp-image-35838").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "Alcampo",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			});
+			
+			
+		//Carrefour
+		$(".wp-image-35839").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "Carrefour",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			});
+			
+		
+		//Bebitus
+		$(".wp-image-36265").parent("a").click(function(){
+			gtag("event", "Tienda", {
+				"event_category": "Tienda",
+				"event_action" : "Bebitus",
+				"event_label":  "'.$product->get_sku().' - '.$product->get_name().'"
+			});
+			})})(jQuery);
+			
+			</script>';
 }
 
 
 
 
+
+
 //******************************
 //******************************
-//*****Tracking de eventos
+//*****Tracking de eventos FIN
 //******************************
 //******************************
 
