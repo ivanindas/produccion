@@ -158,12 +158,10 @@ $notificaciones = $user->notificaciones;
 
 //add_action( 'woocommerce_checkout_before_order_review', 'test' );
 function test(){
-	
 	//do_action('users_register_form');
 }
 
 function my_woocommerce_save_account_details( $user_id ) {
- 
  // $user = wp_update_user( array( 'ID' => $user_id, 'notificaciones' => $_POST[ 'notificaciones' ] ) );
 	update_user_meta( $user_id, "notificaciones", $_POST[ 'notificaciones' ], $notificaciones ); 
 }
@@ -184,13 +182,13 @@ add_action('woocommerce_registration_redirect', 'wc_custom_registration_redirect
 
 //Quitamos campos del formulario
 add_filter( 'woocommerce_checkout_fields' , 'personalizacion_checkout_fields' );
+
 add_filter( 'woocommerce_billing_fields' , 'personalizacion_billing_fields' );
+
 function personalizacion_checkout_fields( $fields ) {
 	$user_id = get_current_user_id();
 	$user = get_userdata( $user_id );
-	
-	//unset($fields['billing']['billing_email']);	
-	if(is_user_logged_in()){
+	if(is_user_logged_in()){// si está logado, quitamos el campo
 		unset($fields['billing']['billing_email']);	
 	}
 	
@@ -200,7 +198,9 @@ function personalizacion_checkout_fields( $fields ) {
 }
 function personalizacion_billing_fields( $fields ) {
 
-	//unset($fields['billing_email']);	
+	if(!is_checkout() && is_user_logged_in()) //si está logado y no está en la pantalla de checkout quitamos el campo
+		unset($fields['billing_email']);	
+	
 	unset($fields['billing_company']);
 
 	return $fields;
