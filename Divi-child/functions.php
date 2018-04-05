@@ -189,18 +189,18 @@ function personalizacion_checkout_fields( $fields ) {
 	$user_id = get_current_user_id();
 	$user = get_userdata( $user_id );
 	
-	
+	//unset($fields['billing']['billing_email']);	
 	if(is_user_logged_in()){
 		unset($fields['billing']['billing_email']);	
 	}
-	//unset($fields['billing']['billing_email']);	
+	
 	unset($fields['billing']['billing_company']);
 
 	return $fields;
 }
 function personalizacion_billing_fields( $fields ) {
 
-	unset($fields['billing_email']);	
+	//unset($fields['billing_email']);	
 	unset($fields['billing_company']);
 
 	return $fields;
