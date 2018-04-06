@@ -250,3 +250,35 @@ body,#et-top-navigation,#footer-info a {
     vertical-align: top;
     width: 20px;
 }
+
+
+
+
+
+/*TEST RESET CSS PARA LA POLITICA DE PRIVACIDAD*/
+
+.page-id-36291 #et-main-area ul{
+    display: block!important;
+    list-style-type: disc!important;
+    margin-top: 1em!important;
+    margin-bottom: 1em!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding-left: 40px!important;
+    
+}
+.page-id-36291 #et-main-area  ol li ol{margin: 0!important;}
+.page-id-36291 #et-main-area  ol{
+    display: block!important;
+    list-style-type: decimal!important;
+    margin-top: 1em!important;
+    margin-bottom: 1em!important;
+    margin-left: 0!important;
+    margin-right: 0!important;
+    padding-left: 40px!important;
+}
+.page-id-36291 #et-main-area  li{
+    	display: list-item!important;
+    margin-bottom: 10px;
+    
+}
