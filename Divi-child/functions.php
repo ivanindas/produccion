@@ -5,6 +5,17 @@ function indasec_enqueue_tema_hijo_css() {
 add_action( 'wp_enqueue_scripts', 'indasec_enqueue_tema_hijo_css' );
 
 
+
+
+//Elimina la opción de añadir más cantidad al carrito.
+
+function cw_remove_quantity_fields( $return, $product ) {
+	return true;
+}
+add_filter( 'woocommerce_is_sold_individually', 'cw_remove_quantity_fields', 10, 2 );
+
+
+
 /**
 * Auto Complete all WooCommerce orders.
 */
@@ -57,9 +68,6 @@ function get_customer_last_order() {
 add_action( 'woocommerce_after_add_to_cart_button', 'get_customer_last_order' );
 add_action( 'woocommerce_checkout_after_order_review', 'redirect_less_30days' );
 
-
-
-
 function redirect_less_30days() {
     $customer_orders = get_posts( array(
         'numberposts' => 1,
@@ -95,22 +103,11 @@ function filters_images() {
 }
 
 
-
-/* // Función que redirecciona al checkout cuando se añade algo al carrito.
-add_filter ('add_to_cart_redirect', 'redirect_to_checkout');
-
-function redirect_to_checkout() {
-    global $woocommerce;
-    $checkout_url = $woocommerce->cart->get_checkout_url();
-    return $checkout_url;
-}
-*/
-
-
+add_action( 'woocommerce_register_form', 'wooc_add_field_to_registration' );
 function wooc_add_field_to_registration(){
     wc_get_template( 'checkout/terms.php' );
 }
-add_action( 'woocommerce_register_form', 'wooc_add_field_to_registration' );
+
  
  
  function wooc_validation_registration( $errors, $username, $password, $email ){
@@ -129,7 +126,7 @@ add_action( 'woocommerce_save_account_details', 'my_woocommerce_save_account_det
 
 
 //SI estuviera activo el registro en el checkout.... 
-add_action( 'woocommerce_checkout_order_review', 'my_woocommerce_edit_account_form' );
+//add_action( 'woocommerce_checkout_order_review', 'my_woocommerce_edit_account_form' );
 add_action( 'woocommerce_checkout_update_user_meta', 'my_woocommerce_save_account_details' );
  
 
@@ -575,8 +572,6 @@ function track_add_cart(){
 			
 			</script>';
 }
-
-
 
 
 
