@@ -279,6 +279,14 @@ body,#et-top-navigation,#footer-info a {
 }
 .page-id-36291 #et-main-area  li{
     	display: list-item!important;
-    margin-bottom: 10px;
+    margin-bottom: 10px;   
+}
+
+
+.tabla_politica_layer_1, .tabla_politica_layer_1 TD{
+    border: 1px solid #000000!important; background-color: #f7f7f7;
+}
+.tabla_politica_layer_1 TD, .tabla_politica_layer_1 TR{
     
+    padding:0 5px!important;
 }

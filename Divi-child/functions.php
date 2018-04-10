@@ -275,9 +275,7 @@ function wc_ga_ee_archive_impression_tracking() {
 	echo "<script>
 		(function($) {
 					$('.post-".$post->ID." > a' ).click(function(){";
-				echo 'gtag("event", "Select_content", {
-				"event_category": "Ecommerce",
-				"event_label": "'.$list.'",
+				echo 'gtag("event", "select_content", {
 				"content_type": "product",
 				"items": [
 				{
@@ -297,9 +295,7 @@ function wc_ga_ee_archive_impression_tracking() {
 	
 		
 		
-	echo 'gtag("event", "View_item_list", {
-		"event_category": "Ecommerce",
-		"event_label": "'.$list.'",
+	echo 'gtag("event", "view_item_list", {
 		"items": [
 			{
 			  "id": "' . esc_attr($id) . '",
@@ -347,9 +343,7 @@ function wc_ga_ee_search_impression_tracking($post) {
 	
 	echo '<span class="wc-ga-ee-impression" data-id="' . esc_attr($id) . '" data-name="' . esc_attr($name) . '" data-cat="' . esc_attr($category) . '" data-list="' . esc_attr($list) . '"></span>';
 	
-	echo '<script>gtag("event", "View_item_list", {
-		"event_category": "Ecommerce",
-		"event_label": "'.$list.'",
+	echo '<script>gtag("event", "view_item_list", {
 		"items": [
 			{
 			  "id": "' . esc_attr($id) . '",
@@ -381,10 +375,7 @@ function track_checkout(){
 			$product_category = $product_cat_id = $term->name;
 			break;
 		}
-		echo '<script>gtag("event","Begin_checkout",{
-                // Event parameters
-				"event_category": "Ecommerce",
-				"event_label": "User data form",
+		echo '<script>gtag("event","begin_checkout",{
                 "items": [
                     {
                     "id":"'.$product->get_sku().'",
@@ -414,10 +405,7 @@ function track_cart(){
 			$product_category = $product_cat_id = $term->name;
 			break;
 		}
-		echo '<script>gtag("event","Checkout_progress",{
-                // Event parameters
-				"event_category": "Ecommerce",
-				"event_label": "Cart view ",
+		echo '<script>gtag("event","checkout_progress",{
                 "items": [
                     {
                     "id":"'.$product->get_sku().'",
@@ -440,8 +428,7 @@ function track_purchase(){
     $order = new WC_Order($order_id);
 	if ($order && $order->has_status('completed')){
         
-        echo '<script>gtag("event", "Purchase", {
-		  "event_category": "Ecommerce",
+        echo '<script>gtag("event", "purchase", {
           "transaction_id": "'.$order_id.'",
           "affiliation": "'.$order->get_customer_id().'",
           "value": 0,
@@ -485,13 +472,33 @@ function track_add_cart(){
     global $product;
     
     //evento de la visualización de la ficha de producto
-    echo '<script> gtag("event","View_item",{"event_category":"Ecommerce","event_label":"'.$product->get_sku().' - '.$product->get_name().'"});</script>';
+    echo '<script> gtag("event","view_item",{
+	"items": [
+			{
+			  "id": "' . $product->get_sku() . '",
+			  "name": "' . $product->get_name() . '",
+			  "brand": "Indasec"
+			}
+		  ]
+	});</script>';
     
     //evento al añadir al carrito
     echo '<script>( function($){	
     $(".single_add_to_cart_button").click(function() {
-		 gtag("event","Add_to_cart",{"event_category":"Ecommerce","event_label":"'.$product->get_sku().' - '.$product->get_name().'"});
-	});})(jQuery);</script>';
+		 gtag("event","add_to_cart",{
+		 "items": [
+			{
+			  "id": "' . $product->get_sku() . '",
+			  "name": "' . $product->get_name() . '",
+			  "brand": "Indasec"
+			}
+		  ]
+	
+		 });
+		 
+		 })
+		 
+		 })(jQuery);</script>';
 	
 	
 
@@ -501,11 +508,6 @@ function track_add_cart(){
 	//Eventos que trackean los botones de tiendas
 	echo '<script>(function($){
 		//AMAZON
-		
-		
-		
-		
-		
 		$(".wp-image-35833").parent("a").click(function(){
 			gtag("event", "Tienda", {
 				"event_category": "Tienda",
@@ -573,6 +575,8 @@ function track_add_cart(){
 			
 			</script>';
 }
+
+
 
 
 
