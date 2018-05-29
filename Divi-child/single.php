@@ -7,20 +7,39 @@ $show_default_title = get_post_meta( get_the_ID(), '_et_pb_show_title', true );
 $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 
 ?>
+
 <div id="main-content">
-	<div class="entry-content">
-		<div class="et_pb_section  et_pb_section_0 et_section_regular">
-			<?php get_template_part( 'acuam_header', 'acuam_header' ); ?>
-		</div>
-		<div class="et_pb_row et_pb_row_3">
-			<div class="et_pb_column et_pb_column_2_3  et_pb_column_3">
+	<?php
+		if ( et_builder_is_product_tour_enabled() ):
+			// load fullwidth page in Product Tour mode
+			while ( have_posts() ): the_post(); ?>
+
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<div class="entry-content">
+					<?php
+						the_content();
+					?>
+					</div> <!-- .entry-content -->
+
+				</article> <!-- .et_pb_post -->
+
+		<?php endwhile;
+		else:
+	?>
+	<div class="container">
+		<div id="content-area" class="clearfix">
+			<div id="left-area">
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php if (et_get_option('divi_integration_single_top') <> '' && et_get_option('divi_integrate_singletop_enable') == 'on') echo(et_get_option('divi_integration_single_top')); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class( 'et_pb_post' ); ?>>
 					<?php if ( ( 'off' !== $show_default_title && $is_page_builder_used ) || ! $is_page_builder_used ) { ?>
 						<div class="et_post_meta_wrapper">
+							<h1 class="entry-title"><?php the_title(); ?></h1>
+
 						<?php
 							if ( ! post_password_required() ) :
+
+								et_divi_post_meta();
 
 								$thumb = '';
 
@@ -47,10 +66,8 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 									et_pb_gallery_images();
 								}
 							?>
-							<h1 class="entry-title"><?php the_title(); ?></h1>
+
 							<?php
-								et_divi_post_meta_acuam();
-								
 								$text_color_class = et_divi_get_post_text_color();
 
 								$inline_style = et_divi_get_post_bg_inline_style();
@@ -133,16 +150,14 @@ $is_page_builder_used = et_pb_is_pagebuilder_used( get_the_ID() );
 				</article> <!-- .et_pb_post -->
 
 			<?php endwhile; ?>
-			</div> <!-- #left-area -->
-			<div class="et_pb_column et_pb_column_1_3  et_pb_column_4 et-last-child">
-				<?php 
-				get_template_part( 'sidebar_acuam', 'index' );
-				//get_sidebar(); 
-				?>
-			</div>
+</div> <!-- #left-area -->
+
+			<?php  get_sidebar(); ?>
 		</div> <!-- #content-area -->
 	</div> <!-- .container -->
+	<?php endif; ?>
 </div> <!-- #main-content -->
-	</div>
 
-<?php get_footer(); ?>
+<?php
+
+get_footer();

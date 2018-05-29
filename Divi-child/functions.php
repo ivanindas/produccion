@@ -677,11 +677,12 @@ function divi_child_theme_setup() {
 		add_shortcode( 'et_pb_blog', array($cbm, '_shortcode_callback') );
 	}
 }
-add_action('wp', 'divi_child_theme_setup', 9999);
+//add_action('wp', 'divi_child_theme_setup', 9999);
 
 
 
 // Modificar el meta de los posts
+/*
 function et_divi_post_meta_acuam() {
 	$postinfo = is_single() ? et_get_option( 'divi_postinfo2' ) : et_get_option( 'divi_postinfo1' );
 	
@@ -724,8 +725,8 @@ function et_pb_postinfo_meta_acuam( $postinfo, $date_format, $comment_zero, $com
 }
 endif;
 
-
-
+*/
+ 
 
 
 /*
@@ -745,8 +746,8 @@ function my_custom_widgets_init(){
 }
 */
 // Dudas de mujer
-include ( get_stylesheet_directory().'/dudas_de_mujer.php');
-add_shortcode ('ddm', 'insertarddm');
+//include ( get_stylesheet_directory().'/dudas_de_mujer.php');
+//add_shortcode ('ddm', 'insertarddm');
 
 
 ?>

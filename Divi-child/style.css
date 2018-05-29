@@ -255,6 +255,28 @@ body,#et-top-navigation,#footer-info a {
 
 
 
+
+/*Quitamos el sidebar en los single*/
+
+/*** Take out the divider line between content and sidebar ***/
+#main-content .container:before {background: none;}
+ 
+/*** Expand the content area to fullwidth ***/
+@media (min-width: 981px){
+#left-area {
+    width: 100%;
+   /* padding: 23px 0px 0px !important;
+    float: none !important;
+    */
+}
+
+.single #sidebar {display:none;}
+   
+
+
+
+
+
 /*TEST RESET CSS PARA LA POLITICA DE PRIVACIDAD*/
 
 .page-id-36291 #et-main-area ul{
