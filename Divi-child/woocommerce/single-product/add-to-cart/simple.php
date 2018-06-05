@@ -42,11 +42,27 @@ if ( $product->is_in_stock() ) : ?>
 		) );
 
 		do_action( 'woocommerce_after_add_to_cart_quantity' );
+		
+//***************		
+//***************		
+//****IVAN*******		
+//***************		
+//***************		
+//modifico la condición para mostrar el botón SOLO para productos de la categoria 20 que es Indasec Compresas. Queda excluido pant, pospart y men
+		$categorias = $product->get_category_ids();
+
+		if($categorias[0]==20){
+		
+//***************		
+//***************		
+//***************		
+//***************
 		?>
+	<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
 
-		<button type="submit" name="add-to-cart" value="<?php echo esc_attr( $product->get_id() ); ?>" class="single_add_to_cart_button button alt"><?php echo esc_html( $product->single_add_to_cart_text() ); ?></button>
-
-		<?php do_action( 'woocommerce_after_add_to_cart_button' ); ?>
+		<?php 
+		}
+			do_action( 'woocommerce_after_add_to_cart_button' ); ?>
 	</form>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
