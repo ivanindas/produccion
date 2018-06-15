@@ -187,6 +187,7 @@ function personalizacion_checkout_fields( $fields ) {
 	$user = get_userdata( $user_id );
 	if(is_user_logged_in()){// si está logado, quitamos el campo
 		unset($fields['billing']['billing_email']);	
+		
 	}
 	
 	unset($fields['billing']['billing_company']);
@@ -669,6 +670,7 @@ function displays_cart_products_feature_image() {
 // Acuam
 
 // Para modificar el aspecto de los posts
+/*
 function divi_child_theme_setup() {
 	if ( class_exists('ET_Builder_Module')) {
 		get_template_part( 'custom/cbm' );
@@ -677,6 +679,7 @@ function divi_child_theme_setup() {
 		add_shortcode( 'et_pb_blog', array($cbm, '_shortcode_callback') );
 	}
 }
+*/
 //add_action('wp', 'divi_child_theme_setup', 9999);
 
 

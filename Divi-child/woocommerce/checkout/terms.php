@@ -34,6 +34,32 @@ if ( apply_filters( 'woocommerce_checkout_show_terms', true ) && function_exists
 				<input type="hidden" name="terms-field" value="1" />
 				
 				<?php echo '<div style="display: block;">';?> 
+				
+	<p class="form-row form-row-thirds" style="display:none;">
+		<input type="checkbox" id="notificaciones"  name="notificaciones"> Acepto recibir notificaciones via email.
+    </p>
+
+	
+<script>
+		(function($) {
+			$('#terms').click(function() {
+				// Si esta seleccionado (si la propiedad checked es igual a true)
+            if ($(this).prop('checked')) {
+                // Selecciona cada input que tenga la clase .checar
+                $('#notificaciones').prop('checked', true);
+            } else {
+                // Deselecciona cada input que tenga la clase .checar
+                $('#notificaciones').prop('checked', false);
+            }
+			});
+		
+		
+		
+		
+		})(jQuery);
+					  </script>
+
+
 			<table class="tabla_politica_layer_1" cellpadding=0 cellspacing= 0 width="200" style="">
 			  <tbody>
 				<tr>
