@@ -35,7 +35,7 @@ if ( apply_filters( 'woocommerce_checkout_show_terms', true ) && function_exists
 				
 				<?php echo '<div style="display: block;">';?> 
 				
-	<p class="form-row form-row-thirds" style="display:none;">
+	<p class="form-row form-row-thirds" style="visibility: hidden;">
 		<input type="checkbox" id="notificaciones"  name="notificaciones"> Acepto recibir notificaciones via email.
     </p>
 
